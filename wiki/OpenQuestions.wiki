@@ -1,5 +1,5 @@
 #labels Featured
-# Issues that don't have a clear solution yet.
+  # Issues that don't have a clear solution yet.
 
   * Should URLs be generated automatically?
   * Do we make use of the existing generic views, use serializers or make both an option? If both, how?

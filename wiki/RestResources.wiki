@@ -1,7 +1,7 @@
 #summary Background knowledge on REST
 #labels Featured
 
-  * [http://rest.blueoxen.net/cgi-bin/wiki.pl?RESTfulDesign RESTfulDesign]
+  * [http://rest.blueoxen.net/cgi-bin/wiki.pl?FrontPage REST Wiki], [http://rest.blueoxen.net/cgi-bin/wiki.pl?RESTfulDesign RESTfulDesign]
   * [http://www.tbray.org/ongoing/When/200x/2007/04/30/REST-is-easy I finally get REST. Wow.]
   * [http://pluralsight.com/blogs/tewald/archive/2007/04/26/46984.aspx Three reasons that REST is not RPC]
   * [http://bitworking.org/news/141/REST-Tips-Prefer-following-links-over-URI-construction REST Tips: Prefer following links over URI construction]

@@ -8,3 +8,4 @@
   * [http://intertwingly.net/wiki/pie/Implementations Freely available Atom publishing clients]
   * [http://www.mnot.net/blog/2007/02/27/rest_issues REST Issues, Real and Imagined]
   * [http://www.prescod.net/rest/ Paul's REST Resources]
+  * [http://bitworking.org/news/201/RESTify-DayTrader RESTify DayTrader]

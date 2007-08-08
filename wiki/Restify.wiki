@@ -1,0 +1,21 @@
+#summary Designing RESTful web services, step by step
+#labels Featured
+
+General procedure (from "RESTful Web Services" by Leonard Richardson and Sam Ruby):
+
+ # Figure out the data set
+ # Split the data set into resources; for each kind of resource:
+ # Name the resources with URIs
+ # Expose a subset of the uniform interface (GET, PUT, DELETE, POST, HEAD)
+ # Design the representation(s) accepted from the client (see below)
+ # Design the representation(s) served to the client (see below)
+ # Integrate this resource into existing resources, using hypermedia links and forms
+ # Consider the typical course of events: what’s supposed to happen?
+ # Consider error conditions: what might go wrong?
+
+RESTful web services with Django (cf. Jacob Kaplan-Moss, "RESTful Web Services"):
+
+ # Create the data model (models.py) -- usually: What's stored in the DB
+ # Define resources and give them URIs (urls.py) -- not every Django model is a resource; you might for example not want to expose user accounts as a resource
+ # Implement resources as Django views (views.py) -- function or `Class.__call__` that takes URL parameters and returns a HttpResponse
+

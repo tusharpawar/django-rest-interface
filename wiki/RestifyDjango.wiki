@@ -1,0 +1,69 @@
+#summary How to provide a REST API for an existing Django application using the Django REST interface
+#labels Featured
+
+*1. Design the interface*
+
+Decide, which resources you want to make available and in what way.
+
+  Resources are sources of specific information, each of which 
+  can be referred to using a global identifier (a URI). In 
+  order to manipulate these resources, components of the network
+  (clients and servers) communicate via a standardized interface
+  (e.g. HTTP) and exchange representations of these resources
+  (the actual documents conveying the information). [http://en.wikipedia.org/wiki/Representational_State_Transfer Wikipedia: REST]
+
+Usually, this involves [http://bitworking.org/news/How_to_create_a_REST_Protocol four steps]:
+
+ # What are the URIs? (Resources)
+ # What's the format? (Representation)
+ # What methods are supported at each URI? (Access restriction)
+ # (What status codes could be returned?)
+
+Some resources may directly correspond to Django models, others may not involve model data at all (e.g. an index page for service discovery) or may correspond to more than one model (e.g. a "marriage" resource that corresponds to a "married_to" one-to-one relationship between two user models). For a good example of how to identify the resources of a complex application, see [http://bitworking.org/news/201/RESTify-DayTrader Restify DayTrader].
+
+*2. Create the model-based resources*
+
+For every model you want to be part of the API, create a `Collection` instance and add it to `urlpatterns` in urls.py:
+
+{{{
+from django_restapi.model_resource import Collection
+from django_restapi.responder import XMLResponder
+from django_restapi_tests.polls.models import Poll, Choice
+
+xml_poll_resource = Collection(
+    queryset = Poll.objects.all(),
+    permitted_methods = ('GET', 'POST', 'PUT', 'DELETE'),
+    responder = XMLResponder(paginate_by = 10)
+)
+
+urlpatterns = patterns('',
+   # ...
+   url(r'^xml/polls/(.*?)/?$', xml_poll_resource),
+)
+}}}
+
+See [http://django-rest-interface.googlecode.com/svn/trunk/django_restapi_tests/examples/ more elaborate examples].
+
+
+*3. Create the non-model-based resources*
+
+Subclass Resource, overwrite some or all of the `create`/`read`/`update`/`delete` methods and, in some cases, `get_url`, and add it to urlpatterns in urls.py:
+
+{{{
+from django_restapi.resource import Resource
+
+class MyResource(Resource):
+    def read(self, request):
+        # ...
+    def update(self, request):
+        # ...
+
+urlpatterns = patterns('',
+   # ...
+   url(r'^my_resource/$', MyResource()),
+)
+}}}
+
+
+
+

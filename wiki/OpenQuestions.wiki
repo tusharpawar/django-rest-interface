@@ -1,5 +1,4 @@
 #summary Issues that don't have a clear solution yet.
-#labels Featured
 
 ===Open===
 

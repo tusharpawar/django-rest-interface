@@ -21,7 +21,7 @@ Usually, this involves [http://bitworking.org/news/How_to_create_a_REST_Protocol
 
 Some resources may directly correspond to Django models, others may not involve model data at all (e.g. an index page for service discovery) or may correspond to more than one model (e.g. a "marriage" resource that corresponds to a "married_to" one-to-one relationship between two user models). For a good example of how to identify the resources of a complex application, see [http://bitworking.org/news/201/RESTify-DayTrader Restify DayTrader].
 
-*2. Create the model-based resources*
+*2. Create model-based resources*
 
 For every model you want to be part of the API, create a `Collection` instance and add it to `urlpatterns` in urls.py:
 
@@ -45,7 +45,7 @@ urlpatterns = patterns('',
 See [http://django-rest-interface.googlecode.com/svn/trunk/django_restapi_tests/examples/ more elaborate examples].
 
 
-*3. Create the non-model-based resources*
+*3. Create non-model-based resources*
 
 Subclass Resource, overwrite some or all of the `create`/`read`/`update`/`delete` methods and, in some cases, `get_url`, and add it to urlpatterns in urls.py:
 
@@ -63,7 +63,6 @@ urlpatterns = patterns('',
    url(r'^my_resource/$', MyResource()),
 )
 }}}
-
 
 
 

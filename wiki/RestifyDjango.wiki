@@ -64,5 +64,4 @@ urlpatterns = patterns('',
 )
 }}}
 
-
-
+See [http://django-rest-interface.googlecode.com/svn/trunk/django_restapi_tests/examples/generic_resource.py an example].

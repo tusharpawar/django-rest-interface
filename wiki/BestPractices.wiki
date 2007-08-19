@@ -23,11 +23,11 @@ According to "RESTful Web Services" by Leonard Richardson and Sam Ruby.
 
   * *New Resources: PUT vs POST*
 
-  A client can only use PUT to create resources when it can calculate the final URI. If the URI is not known, the client can POST to a "factory" resource. *TODO:* Allow PUT resource creation (?).
+  A client can only use PUT to create resources when it can calculate the final URI. If the URI is not known, the client can POST to a "factory" resource.
 
   * *Connectedness*
 
-  Instead of assuming that rules how to construct URIs are known, use links. A service ought to be self-describing, and not relying on auxiliary English text that tells programmers how to write clients. *TODO:* Links for XML/JSON responder.
+  Instead of assuming that rules how to construct URIs are known, use links. A service ought to be self-describing, and not relying on auxiliary English text that tells programmers how to write clients.
 
   * *Relationships Between Resources*
 
@@ -35,7 +35,7 @@ According to "RESTful Web Services" by Leonard Richardson and Sam Ruby.
 
   * *URI Design*
 
-  URIs should be meaningful and well-structured. Use query variables only to suggest arguments being plugged into an algorithm. It is almost never appropriate to put the names of operations in URIs. *TODO:* Don't use query variables for pagination.
+  URIs should be meaningful and well-structured. Use query variables only to suggest arguments being plugged into an algorithm. It is almost never appropriate to put the names of operations in URIs.
 
   * *Outgoing Representations*
 
@@ -43,7 +43,7 @@ According to "RESTful Web Services" by Leonard Richardson and Sam Ruby.
 
   * *Incoming Representations*
 
-  Usually key-value pairs, form-encoding is the most popular representation. If a resource state is too complex for key-value pairs, the input format should be the same as the output format. *TODO:* Submission content types.
+  Usually key-value pairs, form-encoding is the most popular representation. If a resource state is too complex for key-value pairs, the input format should be the same as the output format.
 
   * *Service Versioning*
 
@@ -51,6 +51,5 @@ According to "RESTful Web Services" by Leonard Richardson and Sam Ruby.
 
   * *Permanent URIs Versus Readable URIs*
 
-  Whether URIs as UIs (meaningful, may break when resource state changes) or opaque URIs (e.g. using only database id, permanent) are more appropriate depends on the clients. *TODO:* Make sure the Django REST interface makes both options easy.
-
+  Whether URIs as UIs (meaningful, may break when resource state changes) or opaque URIs (e.g. using only database id, permanent) are more appropriate depends on the clients.
 

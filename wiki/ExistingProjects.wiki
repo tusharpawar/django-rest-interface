@@ -1,5 +1,4 @@
 #summary Projects similar to django-rest-interface
-#labels Featured
 
 I know three projects that overlap with the first part of my proposal:
 
